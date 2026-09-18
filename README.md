@@ -1,46 +1,29 @@
-# Dotfiles
+# ❄️ Hyprland Dotfiles
 
-Configuration de mon système EndeavourOS (Hyprland/Wayland), suivie avec Git
-via la méthode du **bare repository**.
+Ma configuration personnelle pour l'environnement de bureau **Hyprland** sous **EndeavourOS**.
 
-## Méthode utilisée : bare repo + alias
+---
 
-Contrairement à un dépôt Git classique, ce dépôt ne contient pas de
-work-tree : le `git-dir` est stocké séparément (`~/.dotfiles`), et
-`$HOME` sert directement de work-tree. Un alias shell relie les deux.
+## 📌 Versions / Variantes
 
-Référence : https://wiki.archlinux.org/title/Dotfiles
+Ce dépôt contient deux versions de la configuration :
 
-## Reproduire cette config sur une nouvelle machine
+* **`v1`** : Hyprland + Waybar *(Configuration classique)*
+* **`v2`** : Hyprland + Noctalia *(Configuration avec Noctalia Shell)*
 
-1. Cloner le dépôt en mode bare :
-```bash
-   git clone --bare git@github.com:votrenom/dotfiles.git $HOME/.dotfiles
-```
+---
 
-2. Définir l'alias (à ajouter aussi dans `~/.zshrc`) :
-```bash
-   alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
-```
+## ⚙️ Environnement
 
-3. Récupérer les fichiers dans `$HOME` :
-```bash
-   dotfiles checkout
-```
-   Si des fichiers existants entrent en conflit, les sauvegarder avant
-   (`mv` vers un dossier de backup) puis relancer `checkout`.
+* **OS** : EndeavourOS
+* **Gestionnaire de fenêtres** : Hyprland
+* **Barre / Shell** : Waybar (v1) | Noctalia (v2)
 
-4. Masquer les fichiers non suivis dans `git status` :
-```bash
-   dotfiles config status.showUntrackedFiles no
-```
+---
 
-## Utilisation au quotidien
+## 🚀 Installation
+
+Cloner le dépôt dans votre dossier de configuration local :
 
 ```bash
-dotfiles status
-dotfiles add <fichier ou dossier>
-dotfiles commit -m "message"
-dotfiles push
-```
-
+git clone git@github.com:safidinjarahenrialvin/Dotfiles_Hyprland.git
